@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="./jsonpack.js"></script>
+  </head>
+  <body onload="showCar()">
+    <h2>JSON Object Creation in JavaScript</h2>
+    <p>
+      Name: <span id="jname"></span><br /> 
+      Age: <span id="jage"></span><br /> 
+      Address: <span id="jstreet"></span><br /> 
+      Phone: <span id="jphone"></span><br />
+      Last: <span id="json1"></span><br />
+    </p>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+    <script>
+      function mOver(obj)
+      {
+      obj.innerHTML="Thank You"
+      }
+      function mOut(obj)
+      {
+      obj.innerHTML="Mouse Over Me"
+      }
+    </script>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">Click Me</div>
+    <script>
+      function mDown(obj)
+      {
+      obj.style.backgroundColor="#1ec5e5";
+      obj.innerHTML="Release Me"
+      }
+      function mUp(obj)
+      {
+      obj.style.backgroundColor="#D94A38";
+      obj.innerHTML="Thank You"
+      }
+    </script>
+    <script type="text/javascript">
+      var JSONObject= {
+      name:"John Johnson",
+      "street":"Oslo West 555", 
+      "age":33,
+      "phone":"555 1234567"};
+      var txt = '{ "employees" : [' +
+      '{ "firstName":"John" , lastName:"Doe" },' +
+      '{ "firstName":"Anna" , "lastName":"Smith" },' +
+      '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+      var obj = eval ("(" + txt + ")");
+      document.getElementById("json1").innerHTML=obj.employees[1].lastName
+      document.getElementById("jname").innerHTML=JSONObject.name 
+      document.getElementById("jage").innerHTML=JSONObject.age 
+      document.getElementById("jstreet").innerHTML=JSONObject.street 
+      document.getElementById("jphone").innerHTML=JSONObject.phone 
+    </script>
+  </body>
+</html>
