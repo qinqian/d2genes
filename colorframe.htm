@@ -1,0 +1,37 @@
+<head>
+<title>Colored Frames</title>
+<script>
+function setcolor(w) {
+  // Generate a random color
+  var r = Math.floor((Math.random(  ) * 256)).toString(16);
+  var g = Math.floor((Math.random(  ) * 256)).toString(16);
+  var b = Math.floor((Math.random(  ) * 256)).toString(16);
+  var colorString = "#" + r + g + b;
+  // Set the frame background to the random color
+  w.document.write("<body bgcolor='" + colorString 
+      + "'></body>");
+    w.document.close(  );
+    // Schedule another call to this method in one second.
+    // Since we call the setTimeout(  ) method of the frame,
+    // the string will be executed in that context, so we 
+    // must prefix properties of the top-level window with
+    // "parent.".
+    w.setTimeout('parent.setcolor(parent.' + w.name 
+        + ')', 1000);
+    // We could also have done the same thing more simply 
+    // like this: setTimeout('setcolor(' + w.name + ')', 1000);
+}
+</script>
+</head>
+<frameset rows="33%,33%,34%" cols="33%,33%,34%"
+  onload="for(var i = 0; i < 9; i++) setcolor(frames[i]);">
+<frame name="f1" src="javascript:''">
+<frame name="f2" src="javascript:''">
+<frame name="f3" src="javascript:''">
+<frame name="f4" src="javascript:''">
+<frame name="f5" src="javascript:''">
+<frame name="f6" src="javascript:''">
+<frame name="f7" src="javascript:''">
+<frame name="f8" src="javascript:''">
+<frame name="f9" src="javascript:''">
+</frameset>

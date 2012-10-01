@@ -1,0 +1,4 @@
+{
+  id1: {'genea': 1.5, 'geneb': 2.0, 'genec': 0},
+  id2: {'genea': 0, 'geneb': 2.0, 'genec': 1.0},
+}

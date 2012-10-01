@@ -1,0 +1,73 @@
+body {
+    /* margin:30px 50px 3px 390px; */
+    /* padding: 1cm 1cm 1cm 1cm; */
+    background-repeat:no-repeat;
+    background-position:right top;
+
+    text-align: center;
+    font: "Lucida Grande", "Bitstream Vera Sans", "Verdana" 13px/30px italic bold sans-serif;
+    color: LightGoldenrodYellow;  /* font color */
+}
+h1
+{
+    text-align:center;
+    font-family:serif;
+    
+}
+p
+{
+    font-family:serif;
+    font-size: small;
+    background-color: #e0ffff;
+}
+/* div */
+/* { */
+/*     background-color:#b0c4de; */
+/* } */
+#title
+{
+    background-color: green;
+    font: italic bold 30px sans-serif large;
+    height:50px;
+    border-style: double;
+}
+
+hr
+{
+    outline:black; /* dotted thick; */
+    outline-width: 4px;
+    background-color: black;
+}
+
+table
+{
+    border:1px solid black;
+}
+
+.container
+{
+   width:500px;
+   height: 500px;
+   background-color: teal;
+}
+
+table
+{
+   table-layout:auto;
+}
+#header tr:hover
+{
+    color: white;
+    background-color: LightGray;
+}
+
+#genes
+{
+    height:400px;width:500px;
+    float: left;
+}
+#datasets
+{
+    height: 400px; width: 500px;
+    float:left;
+}

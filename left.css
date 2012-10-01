@@ -1,0 +1,22 @@
+.inputdata
+{
+    background-color:gray;
+    color: gray;  /* font color */
+    font: bold 15px sans-serif;
+    height:300px;
+    width:150px;
+}
+#inputsymbol
+{
+    width: 100px;
+    margin: 1px;
+    height: 200px;
+}
+.button
+{
+    text-align:center;
+    background-color: teal;
+    font-style:normal;
+    width: 100px;
+    height: 50px;
+}
