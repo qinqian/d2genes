@@ -1,0 +1,21 @@
+body
+{
+    background-color: Cyan;
+    size: 20;
+}
+h1
+{
+    text-align:center;
+    font-family:serif;
+    
+}
+p
+{
+    font-family:serif;
+    font-size: small;
+    background-color: #e0ffff;
+}
+div
+{
+    background-color:#b0c4de;
+}
