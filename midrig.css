@@ -1,9 +1,8 @@
 body {
-    /* margin:30px 50px 3px 390px; */
+    margin:3px 10px 10px 10px;
     /* padding: 1cm 1cm 1cm 1cm; */
     background-repeat:no-repeat;
     background-position:right top;
-
     text-align: center;
     font: "Lucida Grande", "Bitstream Vera Sans", "Verdana" 13px/30px italic bold sans-serif;
     color: LightGoldenrodYellow;  /* font color */
@@ -12,62 +11,67 @@ h1
 {
     text-align:center;
     font-family:serif;
-    
+}
+h3
+{
+   margin: 4px 10px;
+}
+div
+{
+    border: 1;
 }
 p
 {
-    font-family:serif;
-    font-size: small;
-    background-color: #e0ffff;
+    font:serif medium;
+    margin: 0 0;
+    /* color: white; */
+    width: 570px;
+    background-color: LightGray;
+    color: LightGoldenrodYellow;  /* font color */
 }
-/* div */
-/* { */
-/*     background-color:#b0c4de; */
-/* } */
-#title
-{
-    background-color: green;
-    font: italic bold 30px sans-serif large;
-    height:50px;
-    border-style: double;
-}
-
 hr
 {
     outline:black; /* dotted thick; */
     outline-width: 4px;
     background-color: black;
 }
-
-table
-{
-    border:1px solid black;
-}
-
 .container
 {
-   width:500px;
-   height: 500px;
+   width:570px;
+   height: 900px;
    background-color: teal;
 }
 
 table
 {
-   table-layout:auto;
+  margin: 20px 40px 30px 200px;
+  
 }
-#header tr:hover
+table th
 {
+    border-width: 1px;
+    border-style:solid;
+    font-family: verdana,arial,sans-serif;
+    font-size: 20px;
     color: white;
-    background-color: LightGray;
+    border-collapse: collapse;
+    border-color: white;
+    background-color: black;
+    width: 70%;
+    position: inherit;
+    table-layout:auto;
 }
 
-#genes
+table td
 {
-    height:400px;width:500px;
-    float: left;
+    border: solid;
+    border: 1;
+    font-size: 15px;
+    background-color: gray;
+    border-color: white;
 }
-#datasets
+
+td.up
 {
-    height: 400px; width: 500px;
-    float:left;
+    background-color: rgb(250,0,0);
 }

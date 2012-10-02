@@ -1,6 +1,13 @@
 // jquery
+//   jQuery.get('path/to/file/on/server.txt', null, function(data, status) {  // file handle js
+//     // your file contents are in 'data'
+// });
+// jQuery event with Json file handle
 $(document).ready(function() {
   alert("start");
+//   jQuery.get("~/code/d2genes/application/json/d2gene2Org.json", null, function(data, status){
+//   alert(data);
+// });
   $('#letter-b .button').click(function() {
     $.getJSON('./application/json/d2genesOrg.json', function(data) {
         $('#dictionary').empty();

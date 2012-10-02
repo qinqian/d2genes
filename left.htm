@@ -1,17 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
 <html>
-  <head>
-    <link rel="stylesheet" href="./left.css" type="text/css" media="screen" />
-  </head>
+<head>
+  <link rel="stylesheet" href="./left.css" type="text/css" media="screen">
+  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript">
+</script>
+
+  <title>filling list</title>
+</head>
+
 <body>
   <div>
     <h1 id="title">D2Genes</h1>
   </div>
+
   <div class="inputdata">
-    <form>
-      Input gene symbols<br>
-      <input type="string" id="inputsymbol" name="symbols" />
-      <input type="button" name="inputsymbol" value="submit symbol list" />
+    <form name="input" action="" method="get" id="input">
+      <!-- //action wait -->
+
+      <table width="60%" cellspacing="-2" cellpadding="2" border="0">
+        <tr>
+          <th>Input gene symbols</th>
+        </tr>
+
+        <tr>
+          <td>
+          <textarea name="paste Box" id="genes" rows="8" cols="13">
+</textarea></td>
+        </tr>
+
+        <tr>
+          <td><select name="species" id="species">
+            <option value="hg19">
+              human
+            </option>
+
+            <option value="mm9" selected="selected">
+              mouse
+            </option>
+          </select></td>
+        </tr>
+
+        <tr>
+          <td><input type="submit" id="genesub" class="button" name="inputsymbol" value="submit symbol list"></td>
+        </tr>
+
+        <tr>
+          <td><input type="reset" value="Reset"></td>
+        </tr>
+      </table>
     </form>
+    <hr>
+
+    <form action="MAILTO:qinqianhappy@gmail.com" method="post" enctype="text/plain">
+      <h3>Any question</h3>
+
+      <p>Name</p><br>
+      <input type="text" name="name" value="your name" size="10"><br>
+
+      <p id="container">E-mail:</p><br>
+      <input type="text" name="mail" value="your email" size="10"><br>
+
+      <p>Comment:</p><br>
+      <input type="text" name="comment" value="your comment" size="15"><br>
+      <br>
+      <input type="submit" value="Send"> <input type="reset" value="Reset">
+    </form><script type="text/javascript" src="application/getdata.js">
+</script>
   </div>
-</body>  
+</body>
 </html>
