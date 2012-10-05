@@ -4,7 +4,6 @@ $(document).ready(function() {
     var genesl=$('#genes').val().split('\n');
     var species=$('#species').val();
     genesl.Ucase();
-    // alert(genesl);
     alert(species);
   });
 });
@@ -41,6 +40,7 @@ var MyFunctionResult = $(document).MyFunction();
 var AnotherFunctionResult = $(document).AnotherFunction();
 
 alert(AnotherFunctionResult);
+  
 Array.prototype.Ucase=function()
 {
 for (i=0;i<this.length;i++)

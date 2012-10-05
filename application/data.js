@@ -2,24 +2,21 @@
 //   jQuery.get('path/to/file/on/server.txt', null, function(data, status) {  // file handle js
 //     // your file contents are in 'data'
 // });
-// jQuery event with Json file handle
-$(document).ready(function() {
-  alert("start");
-//   jQuery.get("~/code/d2genes/application/json/d2gene2Org.json", null, function(data, status){
-//   alert(data);
-// });
-  $('#letter-b .button').click(function() {
-    $.getJSON('./application/json/d2genesOrg.json', function(data) {
-        $('#dictionary').empty();
-        var items = [];
-        $.each(data, function(key, val) {
-          items.push('<li id="' + key + '">' + val + '</li>');
-        });
-        $('<ul/>', {
-            // 'class': 'my-new-list',
-            html: items.join('nnn')
-            }).appendTo('frame[1].body');
-        });
+// jQuery event with Json file handle, is kind of Ajax communicate with server-side
+// $(document).ready(function() {
+//   alert("start");
+//   $('#letter-b .button').click(function() {
+//     $.getJSON('./application/json/d2genesOrg.json', function(data) {
+//         $('#dictionary').empty();
+//         var items = [];
+//         $.each(data, function(key, val) {
+//           items.push('<li id="' + key + '">' + val + '</li>');
+//         });
+//         $('<ul/>', {
+//             // 'class': 'my-new-list',
+//             html: items.join('nnn')
+//             }).appendTo('frame[1].body');
+//         });
       // for loop for Json array 
       // $.each(data, function(entryIndex, entry) {
       //   var html = '<div class="entry">';
@@ -41,11 +38,11 @@ $(document).ready(function() {
       //   html += '</div>';
       //   $('#dictionary').append(html);
       // });
-    });
-});
+//     });
+// });
 $(document).ready(function() {
   $('#letter-c .button').click(function() {
-    $.getScript('c.js');
+    $.getScript('../c.js');
   });
 });
 $(document).ready(function() {
@@ -115,7 +112,7 @@ catch(err)
   txt+="or Cancel to return to the home page.\n\n";
   if(!confirm(txt))
     {
-    document.location.href="http://www.w3schools.com/";
+      document.location.href="";
     }
   }
 }
