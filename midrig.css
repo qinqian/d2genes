@@ -24,10 +24,9 @@ p
 {
     font:serif medium;
     margin: 0 0;
-    /* color: white; */
     width: 570px;
     background-color: LightGray;
-    color: LightGoldenrodYellow;  /* font color */
+    color: darkblue;  /* font color */
 }
 hr
 {
@@ -45,7 +44,7 @@ hr
 table
 {
   margin: 20px 40px 30px 200px;
-  
+
 }
 table th
 {
@@ -67,11 +66,14 @@ table td
     border: solid;
     border: 1;
     font-size: 15px;
-    background-color: gray;
-    border-color: white;
+    background-color:white;
+    color: black;
+    border-color: black;
+    text-align: center;
 }
 
-td.up
+.up
 {
-    background-color: rgb(250,0,0);
+    /* background-color: rgb(100,100,100); */
+    background-color: white;
 }

@@ -2,6 +2,19 @@
 //   jQuery.get('path/to/file/on/server.txt', null, function(data, status) {  // file handle js
 //     // your file contents are in 'data'
 // });
+// // # javascript
+// var a=
+// {
+//     "employees": {
+//         "firstName": "John", 
+//         "lastName": "Doe"
+//     }, 
+//     "employees1": {
+//         "firstName": "Peter", 
+//         "lastName": "Jones"
+//     }
+// };
+// // var z=JSONparse(a); // new parse method using json.parse
 // jQuery event with Json file handle, is kind of Ajax communicate with server-side
 // $(document).ready(function() {
 //   alert("start");
@@ -42,9 +55,10 @@
 // });
 $(document).ready(function() {
   $('#letter-c .button').click(function() {
-    $.getScript('../c.js');
+    $.getScript('./c.js');
   });
 });
+
 $(document).ready(function() {
   $('#loading').ajaxStart(function() {
     $(this).show();
@@ -52,27 +66,9 @@ $(document).ready(function() {
     $(this).hide();
   });
 });
-document.getElementById("bodyload").onload=function(){checkCookies();};
-document.getElementById("butdate").onclick=function(){displayDate();};
-document.getElementById("butdata").onclick=function(){readjson(a);};
-// # javascript
-var a=
-{
-    "employees": {
-        "firstName": "John", 
-        "lastName": "Doe"
-    }, 
-    "employees1": {
-        "firstName": "Peter", 
-        "lastName": "Jones"
-    }
-};
-// var z=JSONparse(a); // new parse method using json.parse
 
-function displayDate()
-{
-  document.getElementById("demo").innerHTML=Date();
-};
+document.getElementById("bodyload").onload=function(){checkCookies();};
+document.getElementById("butdata").onclick=function(){readjson(a);};
 
 function readjson(data) {
   var table1=new String();
@@ -98,6 +94,8 @@ else
   alert("Cookies are not enabled");
 }
 };
+
+// exceptions
 var txt="";
 function message()
 {
@@ -112,13 +110,13 @@ catch(err)
   txt+="or Cancel to return to the home page.\n\n";
   if(!confirm(txt))
     {
-      document.location.href="";
+      document.location.href="http://www.google.com";
     }
   }
 }
 var x=prompt("Enter a number between 5 and 10:","");
 try
-{ 
+{
 if(x>10)
   {
   throw "Err1";
