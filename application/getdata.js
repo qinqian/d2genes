@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 $(document).ready(start);
 function start(){
-$("#container").html("<p>He world</p>");
+$("#container").html("<p>Hello world, again~</p>");
 }
 $(document).ready(function () {
   $("p").hide(5000);
