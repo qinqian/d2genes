@@ -9,15 +9,18 @@ $(document).ready(function() {
 });
 
 $(document).ready(start);
-function start(){
-$("#container").html("<p>Hello world, again~</p>");
+  function start(){
+  $("#container").html("<p>Hello world,,,</p>");
 }
+
 $(document).ready(function () {
   $("p").hide(5000);
 });
+
 $("#genesub").click(function(){
   $("p").toggle(2000, function(){});
 });
+
 // jquery return value
 jQuery.fn.extend({
     getd1: function( args ) {
@@ -25,6 +28,7 @@ jQuery.fn.extend({
             return attributes;
     }
 });
+
 var a1 = $(this).getd1();
 
 jQuery.fn.MyFunction = function() {

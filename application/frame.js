@@ -6,8 +6,9 @@ function data2frame(w){
     genes.Ucase();
     table(w[2], genes, 'genes');
     var geneids=getj(genes);
+    alert('loading');
     table(w[1], geneids[0], 'geneids');
-    clickview(geneids, genes, w);
+    clickview(geneids[0], geneids[1], genes, w);
   };
 };
 
@@ -29,7 +30,6 @@ function getj (genes) {
               }
             );
             });
-  alert(genesmatch);
   return [geneids, genesmatch];
   // return {_genesid: geneids, _genesmatch: genesmatch};
 };
@@ -57,21 +57,21 @@ function table(w, content, tag) {
   genetags.innerHTML = genetable;
 }
 
-function clickview(geneids, genes, w) {
+function clickview(geneids, genematch, genes, w) {
   var geneidc = new Array();
   for (var i=0; i < geneids.length; i++){
-    for (var j=0; j < genes.length; j++) {
-      w[1].document.getElementById(geneids[i]).onclick = function() {clickstyle(w[2], genes);};
+    // for (var j=0; j < genes.length; j++) {
+      // w[1].document.getElementById(geneids[i]).onclick = function() {clickstyle(w[2], genes);};
+      w[1].document.getElementById(geneids[i]).onclick = function() {alert(genes);};
+    // w[1].document.getElementById()
     }
   }
-}
 
-function clickstyle(w, genes){
-  for (var i=0; i<genes.length; i++) {
-    
-    // w.document.getElementById(genes[i]).style.background-color=red;
-  }
-}
+// function clickstyle(w, genes){
+//   for (var i=0; i<genes.length; i++) {
+//     // w.document.getElementById(genes[i]).style.background-color=red;
+//   }
+// }
 
 Array.prototype.Ucase=function()
 {
