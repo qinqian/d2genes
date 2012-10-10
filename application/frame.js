@@ -6,7 +6,7 @@ function data2frame(w){
     genes.Ucase();
     table(w[2], genes, 'genes');
     var geneids=getj(genes);
-    alert('loading');
+    alert("loading");
     table(w[1], geneids[0], 'geneids');
     clickview(geneids[0], geneids[1], genes, w);
   };
@@ -15,7 +15,7 @@ function data2frame(w){
 function getj (genes) {
   var geneids = new Array();
   var genesmatch = new Object();
-  $.getJSON("/Users/qinqianhappy/codes/d2genes/application/json/d2genesOrg.json", null,
+  $.getJSON("/Library/WebServer/Documents/d2genes/application/json/d2genesOrg.json", null,
             function(data, status){ // absolute path, need change
               $.each(data, function(entryIndex, entry) {
                 genesmatch = data;
