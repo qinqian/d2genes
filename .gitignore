@@ -1,9 +1,6 @@
-tests/data/*
+application/data/*
 
 .DS_Store
 docs/build/*
 
 .#*
-
-
-
