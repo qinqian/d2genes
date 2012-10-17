@@ -12,7 +12,7 @@ function exception(){
    */
 $(document).ready(function(){
   $("#genesub").click(function(e){
-    alert($(this).attr('id'));
+    // alert($(this).attr('id'));
     e.preventDefault();
     $('#datasetids').empty();
     $('#genes').empty();
@@ -37,8 +37,33 @@ $(document).ready(function(){
                 });
                 table(geneids, 'datasetids');
                 $.each(geneids, function(index, content){
+                  $('#'+content).mouseover(function(){
+                    // $(this).addClass('highlight');
+                    $('#'+content).css({'color':'teal', 'background': 'yellow', 'cursor': 'pointer'});
+                    });
+                  $('#'+content).mouseout(function(){
+                      // $('#'+content).removeClass('highlight');
+                      $('#'+content).css({'color':'black', 'background': 'white'});
+                      $('.idcss').css({'color':'white', 'background': 'blue'});
+                    });
                   $('#'+content).click(function(evt){
-                    $('#USP16').css({'color': 'red', 'background': 'blue'}); // td even row color
+                    if ($(this).attr('class')!='idcss') {
+                      $(this).addClass('idcss');
+                      $('.idcss').css({'color':'white', 'background': 'blue'});
+                    }
+                    else{
+                      $(this).removeClass('highlight idcss');
+                    }
+                    // $('#'+content).css({'color':'white', 'background': 'blue'});
+                    $.each(genes_list, function(geneindex, genecontent){
+                      if (data[content].hasOwnProperty(genecontent)){
+                        var genecss=$('#'+genecontent);
+                        genecss.css({'background':'rgb(255,0,0)', 'color': 'white', 'cursor': 'pointer'});
+                        // $('#genecontent td').cluetip({}) // tooltip from jQuery
+                        // $('table.sortable).tablesorter();
+                      }
+                    });
+                 // $('#USP16').css({'color': 'red', 'background': 'blue'}); // td even row color
                 // $('td:odd').css({'color': 'blue', 'background': 'red'}); // td even row color
                   });
                 });
@@ -69,20 +94,6 @@ function table(content, tag) {
   genetable += "</table>";
   $('#'+tag).prepend(genetable); // append
 }
-function clickview(geneids, genematch, genes, w) {
-  var geneidc = new Array();
-  for (var i=0; i < geneids.length; i++){
-    // for (var j=0; j < genes.length; j++) {
-      // w[1].document.getElementById(geneids[i]).onclick = function() {clickstyle(w[2], genes);};
-      w[1].document.getElementById(geneids[i]).onclick = function() {alert(genes);};
-    // w[1].document.getElementById()
-    }
-  }
-// function clickstyle(w, genes){
-//   for (var i=0; i<genes.length; i++) {
-//     // w.document.getElementById(genes[i]).style.background-color=red;
-//   }
-// }
 
 /*
  string added prototype
