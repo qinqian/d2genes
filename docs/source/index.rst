@@ -11,11 +11,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-
    about
    quick-start
+   Cistrome-Network
+   Cistrome-Enrichment
    instruction
-
 
 Indices and tables
 ==================

@@ -40,35 +40,44 @@ $(document).ready(function(){
                   $('#'+content).mouseover(function(){
                     // $(this).addClass('highlight');
                     $('#'+content).css({'color':'teal', 'background': 'yellow', 'cursor': 'pointer'});
-                    });
+                  });
+
                   $('#'+content).mouseout(function(){
-                      // $('#'+content).removeClass('highlight');
-                      $('#'+content).css({'color':'black', 'background': 'white'});
-                      $('.idcss').css({'color':'white', 'background': 'blue'});
-                    });
-                  $('#'+content).click(function(evt){
+                    // $('#'+content).removeClass('highlight');
+                    $('#'+content).css({'color':'black', 'background': 'white'});
+                    $('.idcss').css({'color':'white', 'background': 'blue'});
+                  });
+                  $('#'+content).click(function(){
                     if ($(this).attr('class')!='idcss') {
                       $(this).addClass('idcss');
                       $('.idcss').css({'color':'white', 'background': 'blue'});
-                    }
-                    else{
-                      $(this).removeClass('highlight idcss');
-                    }
-                    // $('#'+content).css({'color':'white', 'background': 'blue'});
-                    $.each(genes_list, function(geneindex, genecontent){
-                      if (data[content].hasOwnProperty(genecontent)){
-                        var genecss=$('#'+genecontent);
-                        genecss.css({'background':'rgb(255,0,0)', 'color': 'white', 'cursor': 'pointer'});
-                        // $('#genecontent td').cluetip({}) // tooltip from jQuery
-                        // $('table.sortable).tablesorter();
+                      $.each(genes_list, function(geneindex, genecontent){
+                        if (data[content].hasOwnProperty(genecontent)){
+                          var genecss=$('#'+genecontent);
+                          if (genecss.attr('id') != 'genes'){
+                              genecss.addClass('genes');
+                              $(".genes").each(function(){
+                                $(this).css({'background':'rgb(255,0,0)', 'color': 'white', 'cursor': 'pointer'});
+                            });
                       }
-                    });
-                 // $('#USP16').css({'color': 'red', 'background': 'blue'}); // td even row color
-                // $('td:odd').css({'color': 'blue', 'background': 'red'}); // td even row color
+                      // $('#USP16').css({'color': 'red', 'background': 'blue'}); // td even row color
+                      // $('td:odd').css({'color': 'blue', 'background': 'red'}); // td even row color
+                      }});
+                      }
+                     // $('#genecontent td').cluetip({}) // tooltip from jQuery
+                     // $('table.sortable).tablesorter();
+                    else{
+                     $(this).removeClass('idcss');
+                     $.each(genes_list, function(geneindex, genecontent){
+                       //$('#'+genecontent).removeClass('genes');
+                       $('#'+genecontent).removeClass('genes');
+                      // $('#'+genecontent).css({'color':'black', 'background': 'white'});
+                     });
+                   }
                   });
-                });
+             });
   });
-  });
+});
 });
 
 // get and remove duplicates data in an Object
@@ -81,6 +90,7 @@ $.fn.get_remove_data = function(input, searched, index) {
   }
   return result;
 };
+
 function table(content, tag) {
   var genetags = $('#'+tag);
   var genetable="";

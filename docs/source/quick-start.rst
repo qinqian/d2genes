@@ -9,7 +9,8 @@ output
 -------------------
 *two tables*
 left panel indicates all datasetid specified by `Cistrome DC project`_
-right panel indicates the genes symbol, remove replicates and input error
+right panel indicates the genes symbol, remove replicates and input
+error
 
 .. TODO::
    add refseq number
