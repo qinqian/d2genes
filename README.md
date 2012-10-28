@@ -9,6 +9,7 @@ including
 Cistrome set enrichment analysis
 
 
-HTML-KickStart
----------------
-use the framework 
+Frame
+--------------------------------
+use beautiful framework 960, 5pop.html
+HTML-KickStart and Fluid 960 Grid

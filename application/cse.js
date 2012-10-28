@@ -22,17 +22,19 @@ $(document).ready(function(){
     var species = $('#species').val(); // test in human only now
     $.getJSON("./application/json/d2genesOrg.json", null,
               function(data, status) {
-                var uniquegenes = new Array();
-                // get input replicates gene symbol and remove spaces
+                var uniquegenes = new Array(); 
+                // get input replicates gene symbol and remove spaces by jquery trim
                 $.each(genes_list, function(i, el){
                   if ($.inArray($.trim(el), uniquegenes) === -1) uniquegenes.push($.trim(el));
                 });
                 table(uniquegenes, "genes");
                 var geneids = new Array();
+
+                // remove duplicates searched datasetids
                 $.each(data, function(entryIndex, entry){
                   // entryIndex -> dataset id
                   // entry -> {'geneA': score, 'geneB': score,...}
-                  var geneid = $(document).get_remove_data(genes_list, entry, entryIndex);
+                  var geneid = $(document).get_remove_data(uniquegenes, entry, entryIndex);
                   if (geneid != '') geneids.push(geneid);
                 });
                 table(geneids, 'datasetids');
@@ -51,27 +53,29 @@ $(document).ready(function(){
                     if ($(this).attr('class')!='idcss') {
                       $(this).addClass('idcss');
                       $('.idcss').css({'color':'white', 'background': 'blue'});
-                      $.each(genes_list, function(geneindex, genecontent){
+                      $.each(uniquegenes, function(geneindex, genecontent){
                         if (data[content].hasOwnProperty(genecontent)){
                           var genecss=$('#'+genecontent);
-                          if (genecss.attr('id') != 'genes'){
+                          if (genecss.attr('class') != 'genes'){
                               genecss.addClass('genes');
                               $(".genes").each(function(){
                                 $(this).css({'background':'rgb(255,0,0)', 'color': 'white', 'cursor': 'pointer'});
                             });
-                      }
+                          }
+                      // odd and even row has different styles 
                       // $('#USP16').css({'color': 'red', 'background': 'blue'}); // td even row color
                       // $('td:odd').css({'color': 'blue', 'background': 'red'}); // td even row color
-                      }});
-                      }
+                      // TODO
                      // $('#genecontent td').cluetip({}) // tooltip from jQuery
                      // $('table.sortable).tablesorter();
+                      }});
+                      }
                     else{
                      $(this).removeClass('idcss');
-                     $.each(genes_list, function(geneindex, genecontent){
-                       //$('#'+genecontent).removeClass('genes');
-                       $('#'+genecontent).removeClass('genes');
-                      // $('#'+genecontent).css({'color':'black', 'background': 'white'});
+                     $.each(uniquegenes, function(geneindex, genecontent){
+                       // debug: 10/28 22:17:45 2012, remove class and change previous css together 
+                       $('#'+genecontent).removeClass('genes'); 
+                       $('#'+genecontent).css({'background':'white', 'color': 'black', 'cursor': 'pointer'});
                      });
                    }
                   });
